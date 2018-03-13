@@ -1,0 +1,14 @@
+
+
+textarea {
+    width: 900px;
+    height: 150px;
+    border: 1px solid #d3d3d3;
+}
+
+canvas {
+    width: 900px;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid #d3d3d3;
+}
