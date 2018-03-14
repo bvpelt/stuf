@@ -10,7 +10,7 @@ function component() {
     para01.addEventListener("click", excel);
 
     var input = document.createElement("TEXTAREA");
-    input.id='excel_data';
+    input.id = 'excel_data';
     input.addEventListener("click", excel);
     input.addEventListener("change", excel);
     input.addEventListener("keyup", excel);
@@ -21,6 +21,8 @@ function component() {
 
     var canvas = document.createElement("CANVAS");
     canvas.id = 'historie';
+    canvas.width = 900;
+    canvas.height = 400;
 
 
     element.appendChild(para01);
@@ -31,4 +33,15 @@ function component() {
     return element;
 }
 
-document.body.appendChild(component());
+let element = component(); // Store the element to re-render on print.js changes
+document.body.appendChild(element);
+
+if (module.hot) {
+    module.hot.accept('./stuf.js', function () {
+        console.log('Accepting the updated excel module!');
+        excel();
+        document.body.removeChild(element);
+        element = component(); // Re-render the "component" to update the click handler
+        document.body.appendChild(element);
+    })
+}

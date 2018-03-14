@@ -1,6 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -8,15 +8,11 @@ module.exports = {
         app: './src/index.js',
         stuf: './src/stuf.js'
     },
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: './dist'
-    },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Stuf History visualisatie'
-        })
+            title: 'Stuf History Visualisatie'
+        }),
     ],
     output: {
         filename: '[name].bundle.js',
@@ -26,8 +22,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test:
-                    /\.css$/,
+                test: /\.css$/,
                 use:
                     [
                         'style-loader',

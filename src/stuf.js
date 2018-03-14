@@ -1,5 +1,5 @@
 export default function excel() {
-    console.log("called at: " + Date.now().toLocaleString());
+//    console.log("called at: " + Date.now().toLocaleString());
     var yAs = new Set();
     var xAs = new Set();
     var historie = [];
@@ -56,6 +56,7 @@ export default function excel() {
     const xOffset = 150;
     var c = document.getElementById("historie");
     var ctx = c.getContext("2d");
+    console.log(ctx);
     ctx.clearRect(0, 0, c.width, c.height);
     ctx.fillStyle="black";
     const yUnit = 360/yAs.length;
